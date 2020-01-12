@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="templates/base-layout.xhtml">
+    <ui:define name="main-content">
+        <div class="jumbotron justify-content-center jumbotron-background">
+            <div class="row">
+                <div class="col col-md-12 d-flex justify-content-center">
+                    <h1>Create Cat!</h1>
+                </div>
+            </div>
+            <hr class="hr-background" />
+            <h:form id="j_id_p" name="j_id_p" method="post" action="/jsf/cat-create.xhtml" enctype="application/x-www-form-urlencoded">
+                <div class="row">
+                    <div class="col-md-12  d-flex justify-content-center">
+                        <div class="form-group"><h:outputLabel for="j_id_p:catNameInput" value="Name"/>
+                            <h:inputText id="j_id_p_catNameInput" name="j_id_p_catNameInput" value="#{homeBean.catCreateBindingModel.name}" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="form-group"><h:outputLabel for="j_id_p:catBreedInput" value="Breed"/>
+                            <h:inputText id="j_id_p_catBreedInput" name="j_id_p_catBreedInput" value="#{homeBean.catCreateBindingModel.breed}" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="form-group"><h:outputLabel for="j_id_p:catColorInput" value="Color"/>
+                            <h:inputText id="j_id_p_catColorInput" name="j_id_p_catColorInput" value="#{homeBean.catCreateBindingModel.color}" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="form-group"><h:outputLabel for="j_id_p:catAgeInput" value="Age"/>
+                            <h:inputText id="j_id_p_catAgeInput" name="j_id_p_catAgeInput" value="#{homeBean.catCreateBindingModel.age}" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="form-group"><h:outputLabel for="j_id_p:catPriceInput" value="Price"/>
+                            <h:inputText id="j_id_p_catPriceInput" name="j_id_p_catPriceInput" value="#{homeBean.catCreateBindingModel.price}" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr-background" />
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center"><h:outputLabel class="mr-4" for="j_id_p:catGenderRadio" value="Gender"/>
+                        <table id="j_id_p_catGenderRadio"><tr><td>
+                            <h:selectOneRadio id="j_id_p_catGenderRadio_0"  name="j_id_p_catGenderRadio" value="#{homeBean.catCreateBindingModel.gender}" >
+                                <f:selectItem itemValue="Male" />
+                                <f:selectItem itemValue="Female"/>
+                            </h:selectOneRadio>
+                        </td><td>
+                        </td></tr></table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="form-check"><h:selectBooleanCheckbox id="j_id_p_catPassportCheckbox" name="j_id_p_catPassportCheckbox" value="#{homeBean.catCreateBindingModel.hasPassport}" class="form-check-input" />
+                            <h:outputLabel class="form-check-label mr-4" for="j_id_p:catPassportCheckbox" value="Has passport"/>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr-background" />
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="form-group"><h:outputLabel for="j_id_p:catAddedOnInput" value="Added On"/>
+                            <span id="j_id_p:catAddedOnInput" class="ui-calendar form-control">
+                                <p:calendar id="j_id_p_catAddedOnInput_input" name="j_id_p_catAddedOnInput_input" class="ui-inputfield ui-widget ui-state-default ui-corner-all" value="#{homeBean.catCreateBindingModel.addedOn}" />
+                            </span><script id="j_id_p:catAddedOnInput_s" type="text/javascript">$(function(){PrimeFaces.cw("Calendar","widget_j_id_p_catAddedOnInput",{id:"j_id_p:catAddedOnInput",popup:true,locale:"en_US",dateFormat:"m\/d\/y"});});</script>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr-background" />
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <h:commandButton id="j_id_p_j_id_1p" name="j_id_p_j_id_1p" value="Create cat" class="btn btn-success" action="#{homeBean.create}"/>
+                    </div>
+                </div><h:inputHidden  name="j_id_p_SUBMIT" value="1" />
+                <h:inputHidden name="javax.faces.ViewState" id="j_id__v_0_javax_faces_ViewState_1" value="QUZFNzkwODE2RkY4RURCOTAwMDAwMDAx" autocomplete="off" />
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+
+</html>
